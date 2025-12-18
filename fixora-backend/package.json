@@ -1,0 +1,46 @@
+{
+  "name": "fixora-backend",
+  "version": "1.0.0",
+  "description": "Fixora: Your Urban Clap",
+  "license": "ISC",
+  "author": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r dotenv/config server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "connect-mongo": "^5.1.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.2.0",
+    "crypto-random-string": "^5.0.0",
+    "device-detector-js": "^3.0.3",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "express-session": "^1.18.2",
+    "handlebars": "^4.7.8",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.18.1",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.10",
+    "openai": "^5.22.0",
+    "otp-generator": "^4.0.1",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "qrcode": "^1.5.4",
+    "razorpay": "^2.9.6",
+    "socket.io": "^4.8.1",
+    "speakeasy": "^2.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "validators": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/socket.io": "^3.0.1",
+    "nodemon": "^3.1.10"
+  }
+}
