@@ -22,14 +22,9 @@ const { apiLimiter } = require('./middlewares/rateLimit.middleware');
 
 const app = express();
 
-const allowedOrigins = [
-  process.env.FRONTEND_URL,
-  'http://13.202.152.165'
-]
-
 // Middlewares:
 app.use(cors({
-  origin: allowedOrigins,
+  origin: process.env.FRONTEND_URL,
   credentials: true
 }))
 
