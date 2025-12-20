@@ -11,9 +11,9 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
 const Section = React.forwardRef<HTMLElement, SectionProps>(
   ({ className, children, variant = "default", padding = "md", ...props }, ref) => {
     const variantClasses = {
-      default: "bg-black",
-      muted: "bg-black/50",
-      gradient: "bg-gradient-to-br from-black via-gray-950 to-gray-900"
+      default: "bg-transparent",
+      muted: "bg-gray-800",
+      gradient: "bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900"
     }
 
     const paddingClasses = {

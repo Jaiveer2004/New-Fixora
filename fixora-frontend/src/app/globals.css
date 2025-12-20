@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
+  --background: #0a0a0a;
   --foreground: #ffffff;
-  --card: #0a0a0a;
+  --card: #1a1a1a;
   --card-foreground: #ffffff;
-  --popover: #0a0a0a;
+  --popover: #1a1a1a;
   --popover-foreground: #ffffff;
-  --primary: #ffffff;
-  --primary-foreground: #000000;
-  --secondary: #1a1a1a;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #262626;
   --secondary-foreground: #ffffff;
-  --muted: #171717;
-  --muted-foreground: #737373;
+  --muted: #262626;
+  --muted-foreground: #a1a1aa;
   --accent: #262626;
   --accent-foreground: #ffffff;
-  --destructive: #ef4444;
+  --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #262626;
-  --input: #0a0a0a;
-  --ring: #404040;
+  --border: #404040;
+  --input: #262626;
+  --ring: #3b82f6;
   --radius: 0.5rem;
 }
 
@@ -57,22 +57,22 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #262626;
+  background: var(--border);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #404040;
+  background: #525252;
 }
 
 /* Text selection */
 ::selection {
-  background: #ffffff;
-  color: #000000;
+  background: var(--primary);
+  color: var(--primary-foreground);
 }
 
 /* Focus outline improvements */
@@ -188,7 +188,7 @@ body {
 
 /* Better gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -196,7 +196,7 @@ body {
 
 /* Glass morphism effect */
 .glass {
-  background: rgba(10, 10, 10, 0.8);
+  background: rgba(26, 26, 26, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);

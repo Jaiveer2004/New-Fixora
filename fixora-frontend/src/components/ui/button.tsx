@@ -8,11 +8,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-white text-black hover:bg-gray-200 active:bg-gray-300 shadow-md hover:shadow-lg",
+        default: "bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 shadow-md hover:shadow-lg",
         destructive: "bg-red-600 text-white hover:bg-red-700 active:bg-red-800 shadow-md hover:shadow-lg",
-        outline: "border-2 border-gray-800 bg-transparent text-white hover:bg-gray-900 hover:border-gray-700 active:bg-black",
-        secondary: "bg-gray-900 text-white hover:bg-gray-800 active:bg-gray-950 shadow-md hover:shadow-lg border border-gray-800",
-        ghost: "text-gray-400 hover:bg-gray-900 hover:text-white active:bg-black",
+        outline: "border-2 border-gray-600 bg-transparent text-gray-300 hover:bg-gray-800 hover:text-white hover:border-gray-500 active:bg-gray-700",
+        secondary: "bg-gray-700 text-white hover:bg-gray-600 active:bg-gray-800 shadow-md hover:shadow-lg",
+        ghost: "text-gray-300 hover:bg-gray-800 hover:text-white active:bg-gray-700",
       },
       size: {
         default: "h-10 px-4 py-2 min-h-[44px]", // iOS recommended minimum touch target

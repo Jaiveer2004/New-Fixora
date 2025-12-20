@@ -40,17 +40,17 @@ export function Navbar() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-black/95 backdrop-blur-md shadow-lg border-b border-gray-900' 
-        : 'bg-black/90 backdrop-blur-sm'
+        ? 'bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800' 
+        : 'bg-gray-900/90 backdrop-blur-sm'
     }`}>
       <nav className="container mx-auto flex h-14 sm:h-16 items-center justify-between px-3 sm:px-4">
         {/* Logo */}
         <Link 
           href='/' 
-          className="text-lg sm:text-2xl font-bold text-white hover:text-gray-300 transition-colors duration-200 flex items-center gap-1.5 sm:gap-2 touch-feedback"
+          className="text-lg sm:text-2xl font-bold text-white hover:text-blue-400 transition-colors duration-200 flex items-center gap-1.5 sm:gap-2 touch-feedback"
         >
-          <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white rounded-lg flex items-center justify-center">
-            <span className="text-black font-bold text-xs sm:text-sm">F</span>
+          <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-xs sm:text-sm">F</span>
           </div>
           <span className="hidden xs:inline">Fixora</span>
         </Link>
@@ -61,15 +61,15 @@ export function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className={`relative px-3 py-2 text-sm font-medium transition-all duration-200 hover:text-white ${
+              className={`relative px-3 py-2 text-sm font-medium transition-all duration-200 hover:text-blue-400 ${
                 pathname === item.href 
-                  ? 'text-white' 
-                  : 'text-gray-500'
+                  ? 'text-blue-400' 
+                  : 'text-gray-300'
               }`}
             >
               {item.name}
               {pathname === item.href && (
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white rounded-full" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-400 rounded-full" />
               )}
             </Link>
           ))}
@@ -80,20 +80,20 @@ export function Navbar() {
           {user ? (
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-black font-semibold text-sm">
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                  <span className="text-white font-semibold text-sm">
                     {user.fullName?.charAt(0).toUpperCase()}
                   </span>
                 </div>
                 <div className="flex flex-col">
                   <span className="text-sm font-medium text-white">{user.fullName}</span>
-                  <span className="text-xs text-gray-500 capitalize">{user.role}</span>
+                  <span className="text-xs text-gray-400 capitalize">{user.role}</span>
                 </div>
               </div>
               <Button 
                 variant="outline" 
                 onClick={logout}
-                className="hover:bg-gray-900 hover:border-gray-800 hover:text-white transition-all duration-200"
+                className="hover:bg-red-600 hover:border-red-600 hover:text-white transition-all duration-200"
               >
                 Logout
               </Button>
@@ -101,12 +101,12 @@ export function Navbar() {
           ) : (
             <div className="flex items-center gap-2 sm:gap-3">
               <Link href='/login'>
-                <Button variant="ghost" className="text-gray-500 hover:text-white hover:bg-gray-950 text-sm px-3 sm:px-4">
+                <Button variant="ghost" className="text-gray-300 hover:text-white hover:bg-gray-800 text-sm px-3 sm:px-4">
                   Login
                 </Button>
               </Link>
               <Link href="/register">
-                <Button className="bg-white hover:bg-gray-200 text-black border-none shadow-lg hover:shadow-xl transition-all duration-200 text-sm px-3 sm:px-4">
+                <Button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-none shadow-lg hover:shadow-xl transition-all duration-200 text-sm px-3 sm:px-4">
                   Get Started
                 </Button>
               </Link>
@@ -116,7 +116,7 @@ export function Navbar() {
 
         {/* Mobile Menu Button - Enhanced */}
         <button
-          className="md:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-950 transition-colors touch-feedback"
+          className="md:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-800 transition-colors touch-feedback"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
@@ -134,7 +134,7 @@ export function Navbar() {
 
       {/* Mobile Menu - Enhanced */}
       <div className={`md:hidden transition-all duration-300 overflow-hidden ${
-        isMobileMenuOpen ? 'max-h-screen bg-black/98 backdrop-blur-lg border-b border-gray-900 shadow-2xl' : 'max-h-0'
+        isMobileMenuOpen ? 'max-h-screen bg-gray-900/98 backdrop-blur-lg border-b border-gray-800 shadow-2xl' : 'max-h-0'
       }`}>
         <div className="px-4 py-6 space-y-2">
           {navigation.map((item, index) => (
@@ -143,8 +143,8 @@ export function Navbar() {
               href={item.href}
               className={`block px-4 py-3 text-base font-medium transition-all duration-200 rounded-xl ${
                 pathname === item.href 
-                  ? 'text-white bg-gray-950 shadow-md' 
-                  : 'text-gray-500 hover:text-white hover:bg-gray-950 active:bg-gray-900'
+                  ? 'text-blue-400 bg-blue-400/10 shadow-md' 
+                  : 'text-gray-300 hover:text-white hover:bg-gray-800 active:bg-gray-700'
               } touch-feedback animate-slideIn`}
               style={{animationDelay: `${index * 50}ms`}}
               onClick={() => setIsMobileMenuOpen(false)}
@@ -154,16 +154,16 @@ export function Navbar() {
           ))}
           
           {user ? (
-            <div className="pt-4 border-t border-gray-900 space-y-4 animate-slideIn" style={{animationDelay: `${navigation.length * 50}ms`}}>
+            <div className="pt-4 border-t border-gray-800 space-y-4 animate-slideIn" style={{animationDelay: `${navigation.length * 50}ms`}}>
               <div className="flex items-center gap-3 px-4 py-2">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-black font-semibold text-lg">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white font-semibold text-lg">
                     {user.fullName?.charAt(0).toUpperCase()}
                   </span>
                 </div>
                 <div className="flex flex-col">
                   <span className="text-base font-medium text-white">{user.fullName}</span>
-                  <span className="text-sm text-gray-500 capitalize">{user.role}</span>
+                  <span className="text-sm text-gray-400 capitalize">{user.role}</span>
                 </div>
               </div>
               <Button 
@@ -172,17 +172,17 @@ export function Navbar() {
                   logout();
                   setIsMobileMenuOpen(false);
                 }}
-                className="w-full hover:bg-gray-900 hover:border-gray-800 hover:text-white h-12 text-base touch-feedback"
+                className="w-full hover:bg-red-600 hover:border-red-600 hover:text-white h-12 text-base touch-feedback"
               >
                 Logout
               </Button>
             </div>
           ) : (
-            <div className="pt-4 border-t border-gray-900 space-y-3 animate-slideIn" style={{animationDelay: `${navigation.length * 50}ms`}}>
+            <div className="pt-4 border-t border-gray-800 space-y-3 animate-slideIn" style={{animationDelay: `${navigation.length * 50}ms`}}>
               <Link href='/login' className="block">
                 <Button 
                   variant="ghost" 
-                  className="w-full text-gray-500 hover:text-white hover:bg-gray-950 h-12 text-base touch-feedback"
+                  className="w-full text-gray-300 hover:text-white hover:bg-gray-800 h-12 text-base touch-feedback"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Login
@@ -190,7 +190,7 @@ export function Navbar() {
               </Link>
               <Link href="/register" className="block">
                 <Button 
-                  className="w-full bg-white hover:bg-gray-200 text-black border-none shadow-lg h-12 text-base touch-feedback"
+                  className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-none shadow-lg h-12 text-base touch-feedback"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Get Started
