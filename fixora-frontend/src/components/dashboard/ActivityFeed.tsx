@@ -24,7 +24,7 @@ export function ActivityFeed({ activities }: ActivityFeedProps) {
       case 'cancelled':
         return 'text-red-400 bg-red-400/10';
       default:
-        return 'text-blue-400 bg-blue-400/10';
+        return 'text-white bg-white/10';
     }
   };
 
@@ -44,7 +44,7 @@ export function ActivityFeed({ activities }: ActivityFeedProps) {
   };
 
   return (
-    <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+    <div className="bg-black/50 rounded-2xl p-6 border border-gray-900">
       <h3 className="text-lg font-semibold text-white mb-4">Recent Activity</h3>
       
       {activities.length === 0 ? (

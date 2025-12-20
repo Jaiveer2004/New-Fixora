@@ -172,7 +172,7 @@ export default function PartnerServicePage() {
               </p>
             </div>
             <Link href="/partner/services/create">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2">
+              <Button className="bg-white hover:bg-gray-200 text-black px-6 py-3 rounded-xl font-semibold flex items-center gap-2">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
@@ -189,39 +189,39 @@ export default function PartnerServicePage() {
                   <div className="text-2xl">📊</div>
                   <div className="text-2xl font-bold text-white">{services.length}</div>
                 </div>
-                <div className="text-gray-400 text-sm">Total Services</div>
+                <div className="text-gray-500 text-sm">Total Revenue</div>
               </div>
-              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+              <div className="bg-black/50 rounded-2xl p-6 border border-gray-900">
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-2xl">✅</div>
                   <div className="text-2xl font-bold text-green-400">
                     {services.filter(s => s.isActive !== false).length}
                   </div>
                 </div>
-                <div className="text-gray-400 text-sm">Active Services</div>
+                <div className="text-gray-500 text-sm">Active Services</div>
               </div>
-              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+              <div className="bg-black/50 rounded-2xl p-6 border border-gray-900">
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-2xl">📈</div>
-                  <div className="text-2xl font-bold text-blue-400">
+                  <div className="text-2xl font-bold text-white">
                     {formatCurrency(Math.max(...services.map(s => s.price)))}
                   </div>
                 </div>
-                <div className="text-gray-400 text-sm">Highest Price</div>
+                <div className="text-gray-500 text-sm">Highest Price</div>
               </div>
-              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+              <div className="bg-black/50 rounded-2xl p-6 border border-gray-900">
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-2xl">🎯</div>
                   <div className="text-2xl font-bold text-purple-400">{categories.length - 1}</div>
                 </div>
-                <div className="text-gray-400 text-sm">Categories</div>
+                <div className="text-gray-500 text-sm">Categories</div>
               </div>
             </div>
           )}
 
           {/* Search and Filters */}
           {!isLoading && services.length > 0 && (
-            <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+            <div className="bg-black/50 rounded-2xl p-6 border border-gray-900">
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="flex-1">
                   <div className="relative">
@@ -233,7 +233,7 @@ export default function PartnerServicePage() {
                       placeholder="Search services..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-600 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-800 bg-black text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-gray-700"
                     />
                   </div>
                 </div>
@@ -241,7 +241,7 @@ export default function PartnerServicePage() {
                   <select
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-600 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-800 bg-black text-white focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-gray-700"
                   >
                     {categories.map(category => (
                       <option key={category} value={category}>{category}</option>
@@ -252,7 +252,7 @@ export default function PartnerServicePage() {
                   <select
                     value={selectedStatus}
                     onChange={(e) => setSelectedStatus(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-600 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-800 bg-black text-white focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-gray-700"
                   >
                     <option value="All">All Status</option>
                     <option value="Active">Active</option>
@@ -272,21 +272,21 @@ export default function PartnerServicePage() {
             filteredServices.length > 0 ? (
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {filteredServices.map((service) => (
-                  <div key={service._id} className="bg-gray-800 rounded-2xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-200 shadow-lg hover:shadow-xl group">
+                  <div key={service._id} className="bg-black/50 rounded-2xl p-6 border border-gray-900 hover:border-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl group">
                     {/* Service Header */}
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
-                        <h3 className="font-semibold text-white text-lg mb-2 group-hover:text-blue-400 transition-colors">
+                        <h3 className="font-semibold text-white text-lg mb-2 group-hover:text-gray-300 transition-colors">
                           {service.name}
                         </h3>
-                        <span className="text-sm text-blue-400 bg-blue-400/10 px-3 py-1 rounded-full inline-block">
+                        <span className="text-sm text-white bg-white/10 px-3 py-1 rounded-full inline-block border border-gray-900">
                           {service.category}
                         </span>
                       </div>
                       <div className="flex items-center gap-1">
                         {/* Edit Button */}
                         <button 
-                          className="p-2 text-gray-400 hover:text-blue-400 hover:bg-blue-400/10 rounded-lg transition-all"
+                          className="p-2 text-gray-500 hover:text-white hover:bg-white/10 rounded-lg transition-all"
                           title="Edit Service"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -325,7 +325,7 @@ export default function PartnerServicePage() {
                         {formatCurrency(service.price)}
                       </span>
                       {service.duration && (
-                        <span className="text-gray-400 text-sm bg-gray-700 px-3 py-1 rounded-full">
+                        <span className="text-gray-500 text-sm bg-white/10 px-3 py-1 rounded-full border border-gray-900">
                           {service.duration >= 60 
                             ? `${Math.floor(service.duration / 60)}h ${service.duration % 60 ? service.duration % 60 + 'm' : ''}`
                             : `${service.duration}m`
@@ -351,7 +351,7 @@ export default function PartnerServicePage() {
                     </div>
                     
                     {/* Status and Actions */}
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-700">
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-900">
                       <div className="flex items-center gap-2">
                         <div className={`w-2 h-2 rounded-full ${service.isActive !== false ? 'bg-green-400' : 'bg-red-400'}`} />
                         <span className={`text-sm font-medium ${service.isActive !== false ? 'text-green-400' : 'text-red-400'}`}>
@@ -374,7 +374,7 @@ export default function PartnerServicePage() {
 
                     {/* Created Date */}
                     {service.createdAt && (
-                      <div className="mt-3 pt-3 border-t border-gray-700">
+                      <div className="mt-3 pt-3 border-t border-gray-900">
                         <span className="text-gray-500 text-xs">
                           Created {formatDate(service.createdAt)}
                         </span>
@@ -394,7 +394,7 @@ export default function PartnerServicePage() {
                     setSelectedCategory('All');
                     setSelectedStatus('All');
                   }}
-                  className="text-blue-400 hover:text-blue-300 underline"
+                  className="text-white hover:text-gray-300 underline"
                 >
                   Clear filters
                 </button>
@@ -408,7 +408,7 @@ export default function PartnerServicePage() {
                 Create your first service and start accepting bookings from customers in your area.
               </p>
               <Link href="/partner/services/create">
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg">
+                <Button className="bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-xl font-semibold text-lg">
                   Create Your First Service
                 </Button>
               </Link>

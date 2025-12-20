@@ -1,6 +1,6 @@
 export function ServiceCardSkeleton() {
   return (
-    <div className="rounded-xl border border-gray-700 bg-gray-800 shadow-lg overflow-hidden animate-pulse">
+    <div className="rounded-xl border border-gray-900 bg-black/50 shadow-lg overflow-hidden animate-pulse">
       {/* Image skeleton */}
       <div className="h-48 w-full bg-gray-700"></div>
       

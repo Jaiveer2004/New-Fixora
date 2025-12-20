@@ -66,14 +66,14 @@ export function QuickActions({ userRole }: QuickActionsProps) {
   const actions = userRole === 'partner' ? partnerActions : customerActions;
 
   const colorClasses = {
-    blue: 'from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700',
+    blue: 'from-white to-gray-200 hover:from-gray-200 hover:to-gray-300 text-black',
     green: 'from-green-500 to-green-600 hover:from-green-600 hover:to-green-700',
     purple: 'from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700',
     orange: 'from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700'
   };
 
   return (
-    <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+    <div className="bg-black/50 rounded-2xl p-6 border border-gray-900">
       <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

@@ -21,7 +21,7 @@ export function StatsCard({
   color = 'blue' 
 }: StatsCardProps) {
   const colorClasses = {
-    blue: 'from-blue-500 to-blue-600',
+    blue: 'from-white to-gray-200',
     green: 'from-green-500 to-green-600',
     purple: 'from-purple-500 to-purple-600',
     orange: 'from-orange-500 to-orange-600',
@@ -29,7 +29,7 @@ export function StatsCard({
   };
 
   return (
-    <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:shadow-lg">
+    <div className="bg-black/50 rounded-2xl p-6 border border-gray-900 hover:border-gray-800 transition-all duration-300 hover:shadow-lg">
       <div className="flex items-center justify-between">
         <div className="flex-1">
           <p className="text-gray-400 text-sm font-medium">{title}</p>

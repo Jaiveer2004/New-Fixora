@@ -104,13 +104,13 @@ export default function DashboardPage() {
 
           {/* Partner Create Service CTA */}
           {user?.role === 'partner' && (!stats.totalServices || stats.totalServices === 0) && (
-            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 border border-blue-500/20">
+            <div className="bg-black/50 rounded-2xl p-8 border border-gray-900">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">🚀 Ready to start earning?</h3>
-                  <p className="text-blue-100 mb-4">Create your first service and start accepting bookings from customers.</p>
+                  <p className="text-gray-500 mb-4">Create your first service and start accepting bookings from customers.</p>
                   <Link href="/partner/services/create">
-                    <Button className="bg-white text-blue-600 hover:bg-blue-50 font-semibold px-6 py-3">
+                    <Button className="bg-white text-black hover:bg-gray-200 font-semibold px-6 py-3">
                       Create Your First Service
                     </Button>
                   </Link>
@@ -126,22 +126,22 @@ export default function DashboardPage() {
           {user?.role === 'partner' && stats.totalServices && stats.totalServices > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Link href="/partner/services/create">
-                <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-xl p-6 text-white hover:from-green-700 hover:to-green-800 transition-all duration-200 cursor-pointer group">
+                <div className="bg-black/50 rounded-xl p-6 border border-gray-900 text-white hover:border-gray-800 transition-all duration-200 cursor-pointer group">
                   <div className="flex items-center justify-between">
                     <div>
                       <h4 className="text-lg font-semibold mb-1">Create New Service</h4>
-                      <p className="text-green-100">Add another service to your portfolio</p>
+                      <p className="text-gray-500">Add another service to your portfolio</p>
                     </div>
                     <div className="text-2xl group-hover:scale-110 transition-transform">➕</div>
                   </div>
                 </div>
               </Link>
               <Link href="/partner/services">
-                <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-xl p-6 text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200 cursor-pointer group">
+                <div className="bg-black/50 rounded-xl p-6 border border-gray-900 text-white hover:border-gray-800 transition-all duration-200 cursor-pointer group">
                   <div className="flex items-center justify-between">
                     <div>
                       <h4 className="text-lg font-semibold mb-1">Manage Services</h4>
-                      <p className="text-purple-100">Edit or update your existing services</p>
+                      <p className="text-gray-500">Edit or update your existing services</p>
                     </div>
                     <div className="text-2xl group-hover:scale-110 transition-transform">🛠️</div>
                   </div>
@@ -162,10 +162,10 @@ export default function DashboardPage() {
             {loading ? (
               // Loading skeletons
               Array.from({ length: 4 }).map((_, i) => (
-                <div key={i} className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
-                  <Skeleton height={20} baseColor="#374151" highlightColor="#4B5563" />
-                  <Skeleton height={32} baseColor="#374151" highlightColor="#4B5563" className="mt-2" />
-                  <Skeleton height={16} baseColor="#374151" highlightColor="#4B5563" className="mt-2" />
+                <div key={i} className="bg-black/50 rounded-2xl p-6 border border-gray-900">
+                  <Skeleton height={20} baseColor="#171717" highlightColor="#262626" />
+                  <Skeleton height={32} baseColor="#171717" highlightColor="#262626" className="mt-2" />
+                  <Skeleton height={16} baseColor="#171717" highlightColor="#262626" className="mt-2" />
                 </div>
               ))
             ) : user?.role === 'customer' ? (
@@ -240,14 +240,14 @@ export default function DashboardPage() {
             {/* Activity Feed */}
             <div className="lg:col-span-2">
               {loading ? (
-                <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
-                  <Skeleton height={24} baseColor="#374151" highlightColor="#4B5563" className="mb-4" />
+                <div className="bg-black/50 rounded-2xl p-6 border border-gray-900">
+                  <Skeleton height={24} baseColor="#171717" highlightColor="#262626" className="mb-4" />
                   {Array.from({ length: 3 }).map((_, i) => (
                     <div key={i} className="flex space-x-3 mb-4">
-                      <Skeleton circle height={32} width={32} baseColor="#374151" highlightColor="#4B5563" />
+                      <Skeleton circle height={32} width={32} baseColor="#171717" highlightColor="#262626" />
                       <div className="flex-1">
-                        <Skeleton height={16} baseColor="#374151" highlightColor="#4B5563" />
-                        <Skeleton height={14} baseColor="#374151" highlightColor="#4B5563" className="mt-1" />
+                        <Skeleton height={16} baseColor="#171717" highlightColor="#262626" />
+                        <Skeleton height={14} baseColor="#171717" highlightColor="#262626" className="mt-1" />
                       </div>
                     </div>
                   ))}
@@ -265,28 +265,28 @@ export default function DashboardPage() {
           </div>
 
           {user?.role === 'partner' && !loading && (
-            <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+            <div className="bg-black/50 rounded-2xl p-6 border border-gray-900">
               <h3 className="text-lg font-semibold text-white mb-4">Tips for Success</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-gray-700/50 rounded-xl p-4">
+                <div className="bg-white/5 rounded-xl p-4 border border-gray-900">
                   <div className="text-2xl mb-2">📸</div>
                   <h4 className="font-semibold text-white mb-1">Add Portfolio Images</h4>
-                  <p className="text-gray-400 text-sm">Showcase your work to attract more customers</p>
+                  <p className="text-gray-500 text-sm">Showcase your work to attract more customers</p>
                 </div>
-                <div className="bg-gray-700/50 rounded-xl p-4">
+                <div className="bg-white/5 rounded-xl p-4 border border-gray-900">
                   <div className="text-2xl mb-2">⚡</div>
                   <h4 className="font-semibold text-white mb-1">Stay Online</h4>
-                  <p className="text-gray-400 text-sm">Online partners get 3x more bookings</p>
+                  <p className="text-gray-500 text-sm">Online partners get 3x more bookings</p>
                 </div>
-                <div className="bg-gray-700/50 rounded-xl p-4">
+                <div className="bg-white/5 rounded-xl p-4 border border-gray-900">
                   <div className="text-2xl mb-2">💬</div>
                   <h4 className="font-semibold text-white mb-1">Respond Quickly</h4>
-                  <p className="text-gray-400 text-sm">Fast response times improve your ratings</p>
+                  <p className="text-gray-500 text-sm">Fast response times improve your ratings</p>
                 </div>
-                <div className="bg-gray-700/50 rounded-xl p-4">
+                <div className="bg-white/5 rounded-xl p-4 border border-gray-900">
                   <div className="text-2xl mb-2">🎯</div>
                   <h4 className="font-semibold text-white mb-1">Complete Services</h4>
-                  <p className="text-gray-400 text-sm">Higher completion rates boost visibility</p>
+                  <p className="text-gray-500 text-sm">Higher completion rates boost visibility</p>
                 </div>
               </div>
             </div>

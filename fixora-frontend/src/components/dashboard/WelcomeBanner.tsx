@@ -29,13 +29,13 @@ export function WelcomeBanner({ stats }: WelcomeBannerProps) {
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 rounded-2xl p-8 text-white shadow-xl">
+    <div className="bg-black/50 rounded-2xl p-8 border border-gray-900 text-white shadow-xl">
       <div className="flex items-center justify-between">
         <div className="flex-1">
           <h1 className="text-3xl font-bold mb-2">
             {getGreeting()}, {user?.fullName?.split(' ')[0]}! 👋
           </h1>
-          <p className="text-blue-100 text-lg mb-4">
+          <p className="text-gray-500 text-lg mb-4">
             {getWelcomeMessage()}
           </p>
           

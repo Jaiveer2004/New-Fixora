@@ -4,21 +4,21 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-95 touch-feedback",
   {
     variants: {
       variant: {
-        default: "bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 shadow-md hover:shadow-lg",
+        default: "bg-white text-black hover:bg-gray-200 active:bg-gray-300 shadow-md hover:shadow-lg",
         destructive: "bg-red-600 text-white hover:bg-red-700 active:bg-red-800 shadow-md hover:shadow-lg",
-        outline: "border border-gray-600 bg-transparent text-gray-300 hover:bg-gray-800 hover:text-white active:bg-gray-700",
-        secondary: "bg-gray-700 text-white hover:bg-gray-600 active:bg-gray-800 shadow-md hover:shadow-lg",
-        ghost: "text-gray-300 hover:bg-gray-800 hover:text-white active:bg-gray-700",
+        outline: "border-2 border-gray-800 bg-transparent text-white hover:bg-gray-900 hover:border-gray-700 active:bg-black",
+        secondary: "bg-gray-900 text-white hover:bg-gray-800 active:bg-gray-950 shadow-md hover:shadow-lg border border-gray-800",
+        ghost: "text-gray-400 hover:bg-gray-900 hover:text-white active:bg-black",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3 text-xs",
-        lg: "h-11 rounded-md px-8 text-base",
-        icon: "h-10 w-10",
+        default: "h-10 px-4 py-2 min-h-[44px]", // iOS recommended minimum touch target
+        sm: "h-9 rounded-md px-3 text-xs min-h-[40px]",
+        lg: "h-12 rounded-md px-8 text-base min-h-[48px]",
+        icon: "h-10 w-10 min-h-[44px] min-w-[44px]",
       },
     },
     defaultVariants: {

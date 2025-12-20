@@ -175,8 +175,8 @@ export default function ProfilePage() {
             <CardHeader>
               <div className="flex items-start justify-between">
                 <div className="flex items-start gap-3">
-                  <div className="p-2 bg-blue-500/10 rounded-lg">
-                    <User className="h-6 w-6 text-blue-400" />
+                  <div className="p-2 bg-white/10 rounded-lg">
+                    <User className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <CardTitle>Personal Information</CardTitle>
@@ -328,7 +328,7 @@ export default function ProfilePage() {
                 </div>
 
                 {newPassword && (
-                  <div className="space-y-2 p-3 bg-gray-800/50 rounded-lg">
+                  <div className="space-y-2 p-3 bg-black/50 rounded-lg border border-gray-900">
                     <p className="text-xs font-semibold text-gray-300">Password Requirements:</p>
                     <div className="space-y-1">
                       <PasswordRequirement met={passwordValidation.minLength} text="At least 8 characters" />

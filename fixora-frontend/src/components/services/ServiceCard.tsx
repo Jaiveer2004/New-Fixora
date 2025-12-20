@@ -73,7 +73,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
   const imageUrl = getServiceImage(service.name, service.category);
 
   return (
-    <div className="rounded-xl border border-gray-700 bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-blue-500 overflow-hidden">
+    <div className="rounded-xl border border-gray-900 bg-black/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-gray-800 overflow-hidden">
       {/* Service Image */}
       <div className="relative h-48 w-full">
         <Image
@@ -87,7 +87,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
         
         {/* Category badge */}
         <div className="absolute top-4 left-4">
-          <span className="text-sm text-blue-400 font-medium bg-blue-900/80 px-3 py-1 rounded-full backdrop-blur-sm">
+          <span className="text-sm text-white font-medium bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm border border-gray-900">
             {service.category}
           </span>
         </div>
@@ -141,7 +141,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
             <p className="text-xs text-gray-400">Starting price</p>
           </div>
           <Link href={`/service-providers/${encodeURIComponent(service.name)}`}>
-            <Button className="bg-blue-600 hover:bg-blue-700 px-6 py-2">
+            <Button className="bg-white hover:bg-gray-200 text-black px-6 py-2">
               View Providers
             </Button>
           </Link>

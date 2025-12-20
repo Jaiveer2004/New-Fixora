@@ -10,7 +10,7 @@ export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
   ({ className, variant = "default", onClose, children, ...props }, ref) => {
     const variantStyles = {
-      default: "bg-blue-900/30 border-blue-700 text-blue-200",
+      default: "bg-white/10 border-white text-white",
       destructive: "bg-red-900/30 border-red-700 text-red-200",
       success: "bg-green-900/30 border-green-700 text-green-200",
       warning: "bg-yellow-900/30 border-yellow-700 text-yellow-200",

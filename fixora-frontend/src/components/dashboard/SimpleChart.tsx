@@ -13,7 +13,7 @@ export function SimpleChart({ title, data }: SimpleChartProps) {
   const maxValue = Math.max(...data.map(d => d.value));
 
   return (
-    <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+    <div className="bg-black/50 rounded-2xl p-6 border border-gray-900">
       <h3 className="text-lg font-semibold text-white mb-4">{title}</h3>
       
       <div className="space-y-4">
